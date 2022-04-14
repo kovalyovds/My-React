@@ -3,8 +3,9 @@ import {useEffect, useState} from "react";
 import {carService} from "../../services";
 import {Car} from "../Car/Car";
 
-const Cars = ({newCar, setCarForUpdate}) => {
+const Cars = ({newCar, setCarForUpdate, updateCar}) => {
     const [cars, setCars] = useState([]);
+    const [deleteCarId, setDeleteCarId] = useState(null);
 
     useEffect(() => {
         carService.getAll().then(({data}) => setCars(data))
@@ -14,11 +15,23 @@ const Cars = ({newCar, setCarForUpdate}) => {
         if (newCar) {
             setCars(prevState => [...prevState, newCar])
         }
-    }, [newCar])
+        if (deleteCarId) {
+            setCars(cars.filter(car => car.id !== deleteCarId))
+        }
+    }, [newCar, deleteCarId])
+
+    useEffect(() => {
+        if (updateCar) {
+            const car = cars.find(car => car.id === updateCar.id);
+            Object.assign(car, updateCar);
+            setCars([...cars])
+        }
+    }, [updateCar])
 
     return (
         <div>
-            {cars.map(car => <Car key={car.id} car={car} setCarForUpdate={setCarForUpdate}/>)}
+            {cars.map(car => <Car key={car.id} car={car} setCarForUpdate={setCarForUpdate}
+                                  setDeleteCarId={setDeleteCarId}/>)}
         </div>
     );
 };
