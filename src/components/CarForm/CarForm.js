@@ -35,6 +35,7 @@ const CarForm = ({setNewCar, carForUpdate, setUpdateCar, setCarForUpdate}) => {
             reset();
         } catch (e) {
             setFormError(e.response.data)
+            console.log(formError)
         }
     }
 
