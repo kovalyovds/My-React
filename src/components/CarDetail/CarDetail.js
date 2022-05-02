@@ -14,10 +14,10 @@ export const CarDetail = ({car, car: {id, model, price, year}}) => {
 
     return (
         <div>
-            <p><b>id:</b>{id}</p>
-            <p><b>model:</b>{model}</p>
-            <p><b>price:</b>{price}</p>
-            <p><b>year:</b>{year}</p>
+            <p><b>id: </b><i>{id}</i></p>
+            <p><b>model: </b>{model}</p>
+            <p><b>price: </b>{price}</p>
+            <p><b>year: </b>{year}</p>
             <button onClick={deleteById}>delete</button>
             <button onClick={() => dispatch(carActions.setCarForUpdate({car}))}>update</button>
         </div>
