@@ -1,23 +1,13 @@
-import './App.css'
-import {Cats, CatsForm, Dogs, DogsForm} from "./components";
+import {CarForm, Cars} from "./components";
 
-function App() {
+const App = () => {
     return (
         <div>
-            <div className={'flex'}>
-                <CatsForm/>
-                <DogsForm/>
-            </div>
-
+            <CarForm/>
             <hr/>
-
-            <div className={'flex'}>
-                <Cats/>
-                <Dogs/>
-            </div>
-
+            <Cars/>
         </div>
     );
-}
+};
 
-export {App};
+export default App;
