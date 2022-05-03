@@ -1,3 +1,2 @@
-export * from './CarsPage/CarsPage';
-export * from './NotFoundPage/NotFoundPage';
-export * from './SingleCarPage/SingleCarPage';
+export * from './EpisodesPages/EpisodesPage';
+export * from './CharactersPage/CharactersPage';

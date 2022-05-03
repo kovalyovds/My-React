@@ -1,4 +1,6 @@
-export * from './Cars/Cars';
-export * from './Car/Car';
-export * from './CarForm/CarForm';
-export * from './CarDetail/CarDetail';
+export * from './Header/Header';
+export * from './Episodes/Episodes';
+export * from './Episode/Episode';
+export * from './Character/Character';
+export * from './Characters/Characters';
+
